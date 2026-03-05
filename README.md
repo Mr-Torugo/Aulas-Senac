@@ -9,8 +9,3 @@ A ideia é manter tudo centralizado, facilitando o acesso e acompanhamento das a
 - **/materiais** → Apostilas, PDFs e conteúdos de apoio.  
 - **/anotações** → Resumos e notas de aula.  
 - **/exercícios** → Listas de exercícios e práticas.  
-
-## 🚀 Uso
-1. Clone o repositório:  
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
