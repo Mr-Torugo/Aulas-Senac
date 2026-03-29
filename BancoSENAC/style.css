@@ -1,0 +1,77 @@
+/* Estilos básicos para o container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Estilização de Inputs e Botões */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Painel de Conta */
+.saldo-box {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#saldo-valor {
+    font-size: 1.2rem;
+    color: #28a745;
+}
+
+.operacoes {
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.operacoes h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+#btn-sair {
+    background-color: #dc3545;
+    margin-top: 20px;
+}
+
+#btn-sair:hover {
+    background-color: #a71d2a;
+}

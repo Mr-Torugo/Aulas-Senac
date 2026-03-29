@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco SENAC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <section id="login-section">
+            <h2>Banco SENAC</h2>
+            <input type="text" id="input-conta" placeholder="Número da Conta (ex: 1001)">
+            <input type="password" id="input-senha" placeholder="Senha">
+            <button id="btn-login">Entrar</button>
+            <p id="login-erro" style="color: red; display: none;">Dados inválidos!</p>
+        </section>
+
+        <section id="painel-section" style="display: none;">
+            <h2 id="boas-vindas">Olá, Cliente</h2>
+            <div class="saldo-box">
+                <p>Saldo Atual: <strong id="saldo-valor">R$ 0,00</strong></p>
+            </div>
+
+            <div class="operacoes">
+                <h3>Operações</h3>
+                <input type="number" id="valor-op" placeholder="Valor R$">
+                
+                <div class="botoes">
+                    <button id="btn-depositar">Depositar</button>
+                    <button id="btn-sacar">Sacar</button>
+                </div>
+
+                <hr>
+                <h3>Transferência</h3>
+                <input type="text" id="conta-destino" placeholder="Conta Destino">
+                <button id="btn-transferir">Transferir</button>
+            </div>
+
+            <button id="btn-sair">Sair</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
