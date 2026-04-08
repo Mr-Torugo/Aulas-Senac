@@ -1,0 +1,188 @@
+{
+  "destaque": [
+    {
+      "id": 1,
+      "titulo": "Homem-Aranha: Através do Aranhaverso",
+      "pagina": "aranhaverso.php",
+      "imagem": "imagens/8Vt6mWEReuy4Of61Lnj5Xj704m8.webp",
+      "alt": "Homem-Aranha: Através do Aranhaverso",
+      "nota": "8.4",
+      "data_lancamento": "28 de Maio, 2022",
+      "rating_class": "rating-high",
+      "descricao": "Miles Morales retorna para o próximo capítulo da saga do Aranhaverso, uma aventura épica que transportará o Homem-Aranha.",
+      "generos": [
+        {
+          "nome": "Ficção Científica",
+          "classe": "bg-red-900/50 text-red-300"
+        },
+        {
+          "nome": "Aventura",
+          "classe": "bg-blue-900/50 text-blue-300"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Oppenheimer",
+      "pagina": "oppenheimer.php",
+      "imagem": "imagens/1OsQJEoSXBjduuCvDOlRhoEUaHu.webp",
+      "alt": "Oppenheimer",
+      "nota": "8.3",
+      "data_lancamento": "25 de Maio, 2022",
+      "rating_class": "rating-high",
+      "descricao": "A história do cientista J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica durante a Segunda Guerra Mundial.",
+      "generos": [
+        {
+          "nome": "Histórico",
+          "classe": "bg-yellow-900/50 text-yellow-300"
+        },
+        {
+          "nome": "Drama",
+          "classe": "bg-purple-900/50 text-purple-300"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Godzilla e Kong: O Novo Império",
+      "pagina": "godzilla.php",
+      "imagem": "imagens/fWSGD2yrzz6hscocnMD8AEXIThk.webp",
+      "alt": "Godzilla e Kong",
+      "nota": "7.1",
+      "data_lancamento": "26 de Maio, 2022",
+      "rating_class": "rating-medium",
+      "descricao": "Godzilla e Kong unem forças contra uma ameaça colossal escondida no interior da Terra, desafiando sua própria existência.",
+      "generos": [
+        {
+          "nome": "Ação",
+          "classe": "bg-green-900/50 text-green-300"
+        },
+        {
+          "nome": "Ficção Científica",
+          "classe": "bg-gray-900/50 text-gray-300"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Kung Fu Panda 4",
+      "pagina": "kungfupanda4.php",
+      "imagem": "imagens/kDp1vUBnMpe8ak4rjgl3cLELqjU.webp",
+      "alt": "Kung Fu Panda 4",
+      "nota": "7.0",
+      "data_lancamento": "25 de Maio, 2022",
+      "rating_class": "rating-medium",
+      "descricao": "Po precisa encontrar um sucessor como Dragão Guerreiro enquanto enfrenta um novo vilão que pode conjurar todos os vilões do passado.",
+      "generos": [
+        {
+          "nome": "Animação",
+          "classe": "bg-orange-900/50 text-orange-300"
+        },
+        {
+          "nome": "Comédia",
+          "classe": "bg-pink-900/50 text-pink-300"
+        },
+        {
+          "nome": "Aventura",
+          "classe": "bg-amber-900/50 text-amber-300"
+        }
+      ]
+    }
+  ],
+  "proximo_lancamento": [
+    {
+      "id": 5,
+      "titulo": "Furiosa: Uma Saga Mad Max",
+      "imagem": "imagens/iADOJ8Zymht2JPMoy3R7xceZprc.webp",
+      "alt": "Furiosa",
+      "data_lancamento": "23 de Maio, 2024",
+      "descricao": "A história da jovem Imperatriz Furiosa antes de conhecer Max Rockatansky.",
+      "generos": [
+        {
+          "nome": "Ação",
+          "classe": "bg-red-900/50 text-red-300"
+        },
+        {
+          "nome": "Ficção Científica",
+          "classe": "bg-gray-900/50 text-gray-300"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Deadpool & Wolverine",
+      "imagem": "imagens/xq4v7JE8niZ75OYYPDGNn6Gzpyt.webp",
+      "alt": "Deadpool & Wolverine",
+      "data_lancamento": "25 de Julho, 2024",
+      "descricao": "Deadpool muda a história do MCU ao se juntar a Wolverine em uma jornada que vai desafiar o multiverso.",
+      "generos": [
+        {
+          "nome": "Ação",
+          "classe": "bg-red-900/50 text-red-300"
+        },
+        {
+          "nome": "Comédia",
+          "classe": "bg-blue-900/50 text-blue-300"
+        },
+        {
+          "nome": "Ficção Científica",
+          "classe": "bg-purple-900/50 text-purple-300"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Joker: Folie à Deux",
+      "imagem": "imagens/jNttwl5CYgnxNwQ8157BxyYJqu2.webp",
+      "alt": "Joker 2",
+      "data_lancamento": "3 de Outubro, 2024",
+      "descricao": "Arthur Fleck encontra Harley Quinn em Arkham Asylum e sua loucura se transforma em um romance distorcido.",
+      "generos": [
+        {
+          "nome": "Drama",
+          "classe": "bg-purple-900/50 text-purple-300"
+        },
+        {
+          "nome": "Musical",
+          "classe": "bg-pink-900/50 text-pink-300"
+        },
+        {
+          "nome": "Thriller",
+          "classe": "bg-gray-900/50 text-gray-300"
+        }
+      ]
+    }
+  ],
+  "melhor_avaliado": [
+    {
+      "id": 8,
+      "titulo": "O Poderoso Chefão",
+      "imagem": "imagens/7g6wvsWHxBQujUcSXvZLhdFpDUy.webp",
+      "alt": "O Poderoso Chefão",
+      "nota": "9.2",
+      "rating_class": "rating-high",
+      "ano": "1972",
+      "descricao": "O patriarca de uma dinastia do crime organizado transfere o controle de seu império clandestino para seu filho relutante."
+    },
+    {
+      "id": 9,
+      "titulo": "O Cavaleiro das Trevas",
+      "imagem": "imagens/4lj1ikfsSmMZNyfdi8R8Tv5tsgb.webp",
+      "alt": "O Cavaleiro das Trevas",
+      "nota": "8.5",
+      "rating_class": "rating-high",
+      "ano": "2008",
+      "descricao": "Quando o Coringa mergulha Gotham City na anarquia, Batman deve enfrentar o caos enquanto luta com seus próprios limites."
+    },
+    {
+      "id": 10,
+      "titulo": "Parasita",
+      "imagem": "imagens/bik2BZjmVjeE6LOZqtuTjb4jJPQ.webp",
+      "alt": "Parasita",
+      "nota": "8.5",
+      "rating_class": "rating-high",
+      "ano": "2019",
+      "descricao": "Uma família pobre se infiltra na casa de uma família rica, desencadeando eventos inesperados que mudam suas vidas para sempre."
+    }
+  ]
+}
