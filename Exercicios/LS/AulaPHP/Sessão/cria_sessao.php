@@ -1,7 +1,14 @@
 <?php
+
     session_start();
-    $_SESSION["nome"] = "ana";
+
+    $_SESSION ["nome"] = "Ana";
+    
+
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>nome: <?php echo $_SESSION["nome"];?></h1>
+
+<h1>  
+
+    Nome:
+    <?php echo $_SESSION["nome"]; ?>
+
+</h1>
+    
 </body>
 </html>
