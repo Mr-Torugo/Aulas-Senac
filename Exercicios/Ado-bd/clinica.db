@@ -1,0 +1,76 @@
+-- ==========================================
+-- 1. CRIAÇÃO DAS TABELAS (MODELAGEM 1:N)
+-- ==========================================
+
+-- Tabela principal: Pacientes
+CREATE TABLE pacientes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    data_nascimento DATE NOT NULL,
+    telefone TEXT,
+    email TEXT
+);
+
+-- Tabela transacional: Consultas
+CREATE TABLE consultas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    paciente_id INTEGER,
+    data_consulta DATE NOT NULL,
+    motivo_consulta TEXT NOT NULL,
+    valor REAL,
+    FOREIGN KEY (paciente_id) REFERENCES pacientes(id)
+);
+
+-- ==========================================
+-- 2. INSERÇÃO DE DADOS FICTÍCIOS
+-- ==========================================
+
+INSERT INTO pacientes (nome, data_nascimento, telefone, email) VALUES
+('Ana Costa', '1985-04-15', '11987654321', 'ana.costa@email.com'),
+('Carlos Souza', '1992-08-22', '11912345678', 'carlos_sz@provedor.net'),
+('Mariana Silva', '2001-11-05', '11999887766', 'mari.silva@meuemail.com.br'),
+('João Paulo', '1978-02-10', '11955443322', 'joaopaulo@empresa.com');
+
+INSERT INTO consultas (paciente_id, data_consulta, motivo_consulta, valor) VALUES
+(1, '2026-03-10', 'Exame de Refração', 150.00),
+(2, '2026-04-05', 'Adaptação de Lentes de Contato', 200.00),
+(1, '2026-04-08', 'Retorno Exame', 0.00),
+(3, '2026-01-20', 'Avaliação de Acuidade Visual', 120.00),
+(4, '2025-11-15', 'Exame de Refração', 150.00),
+(2, '2026-04-10', 'Retorno Lentes', 0.00),
+(1, date('now', '-2 days'), 'Renovação de Receita', 100.00);
+
+-- ==========================================
+-- 3. CONSULTAS SQL (RESOLUÇÃO DA ATIVIDADE)
+-- ==========================================
+
+-- A. Extração de texto (substr e instr) - Identificando os domínios de e-mail
+SELECT 
+    nome, 
+    email,
+    substr(email, instr(email, '@') + 1) AS dominio_email
+FROM pacientes;
+
+-- B. Cálculo de idade com base na data de nascimento
+SELECT 
+    nome, 
+    data_nascimento,
+    CAST(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', data_nascimento) AS INT) AS idade_atual
+FROM pacientes;
+
+-- C. Agregações e Filtros (SUM, COUNT, AVG, GROUP BY, HAVING) - Pacientes mais assíduos
+SELECT 
+    p.nome,
+    COUNT(c.id) AS total_atendimentos,
+    SUM(c.valor) AS valor_total_gasto,
+    ROUND(AVG(c.valor), 2) AS ticket_medio_por_consulta
+FROM pacientes p
+JOIN consultas c ON p.id = c.paciente_id
+GROUP BY p.nome
+HAVING total_atendimentos > 1;
+
+-- D. Mensagens concatenadas e formatação (strftime e printf) - Log do sistema
+SELECT 
+    p.nome || ' realizou o procedimento de "' || c.motivo_consulta || '" em ' || strftime('%d/%m/%Y', c.data_consulta) || '. Valor: R$ ' || printf('%.2f', c.valor) AS log_atendimento
+FROM pacientes p
+JOIN consultas c ON p.id = c.paciente_id;
