@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Propagação de Eventos</title>
+  <style>
+    div { padding: 20px; border: 1px solid black; margin: 10px; }
+    #pai { background-color: lightblue; }
+    #filho { background-color: lightgreen; }
+    #botao { background-color: white; padding: 10px; border: 1px solid gray; }
+  </style>
+</head>
+<body>
+
+  <h1>Demonstração de Bubbling</h1>
+
+  <div id="pai">
+    PAI
+    <div id="filho">
+      FILHO
+      <button id="botao">BOTÃO</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
