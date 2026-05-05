@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Prático de RegEx e Validação</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        h1 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input[type="text"], input[type="password"] { width: 95%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+        .erro { border-color: red !important; background-color: #ffe8e8; }
+        .mensagem-erro { color: red; font-size: 0.9em; margin-top: 5px; height: 1.2em; }
+        button[type="submit"] { background-color: #007bff; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; font-size: 1.1em; }
+        button[type="submit"]:hover { background-color: #0056b3; }
+        .status-geral { margin-top: 20px; padding: 10px; border-radius: 4px; font-weight: bold; }
+        .status-sucesso { background-color: #d4edda; color: #155724; }
+        .status-falha { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Desafio RegEx: Validação Prática</h1>
+        <p>Preencha o formulário garantindo que todos os dados sigam os padrões de Expressão Regular exigidos.</p>
+
+        <form id="desafioForm">
+            <div>
+                <label for="cidade">Cidade (Apenas Letras e Espaços)</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Ex: Rio de Janeiro">
+                <p id="erro-cidade" class="mensagem-erro"></p>
+            </div>
+            
+            <div>
+                <label for="data">Data de Envio (Formato: 00/00/0000)</label>
+                <input type="text" id="data" name="data" placeholder="Ex: 25/12/2025">
+                <p id="erro-data" class="mensagem-erro"></p>
+            </div>
+
+            <div>
+                <label for="valor">Valor (Apenas números e um separador decimal: . ou ,)</label>
+                <input type="text" id="valor" name="valor" placeholder="Ex: 100.50 ou 100,50">
+                <p id="erro-valor" class="mensagem-erro"></p>
+            </div>
+
+            <div>
+                <label for="username">Nome de Usuário (3 a 16 caracteres: letras, números e _)</label>
+                <input type="text" id="username" name="username" placeholder="Ex: user_dev_123">
+                <p id="erro-username" class="mensagem-erro"></p>
+            </div>
+
+            <div>
+                <label for="senha">Senha Forte</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres, com letra, número e símbolo">
+                <p id="erro-senha" class="mensagem-erro"></p>
+            </div>
+
+            <button type="submit">Validar e Enviar</button>
+            <div id="status-envio" class="status-geral"></div>
+        </form>
+    </div>
+
+    <script src="desafio_regex.js"></script>
+</body>
+</html>
