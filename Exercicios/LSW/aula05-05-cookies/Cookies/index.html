@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Cookies - Escolha de Tema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Preferências</h2>
+        
+        <input type="text" id="inputNome" placeholder="Seu nome">
+        
+        <label for="selectTema">Escolha o Tema:</label>
+        <select id="selectTema">
+            <option value="claro">Modo Claro</option>
+            <option value="escuro">Modo Escuro</option>
+        </select>
+        
+        <button class="btn-save" onclick="salvar()">Salvar Configurações</button>
+        <button class="btn-clear" onclick="limpar()">Redefinir Tudo</button>
+
+        <p id="msg"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estado quando o tema 'escuro' for aplicado */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+
+.btn-save { background-color: #007bff; color: white; }
+.btn-clear { background-color: #6c757d; color: white; }
+#msg { margin-top: 20px; min-height: 1.5em; color: #007bff; }
+body.dark-mode #msg { color: #4dabf7; }

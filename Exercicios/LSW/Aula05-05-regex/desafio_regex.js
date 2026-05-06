@@ -8,13 +8,13 @@
 const REGEX_CIDADE = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/; 
 
 // 2. Formato de Data DD/MM/AAAA (Ex: "25/12/2025")
-const REGEX_DATA = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+const REGEX_DATA = /^\d{2}\/\d{2}\/\d{4}$/;
 
 // 3. Valor Flutuante (Decimal com . ou ,) (Ex: "100.50" ou "100,50")
-const REGEX_VALOR = /^\d+([.,]\d{2})$/;
+const REGEX_VALOR = /^\d+([,\.]\d+)?$/;
 
 // 4. Nome de Usuario (Alfanumerico + _, 3 a 16 caracteres) (Ex: "user_dev_123")
-const REGEX_USERNAME = /^[a-zA-Z0-9_]{3,16}$/;
+const REGEX_USERNAME = /^[a-zA-Z0-9_](3,16)$/;
 
 // 5. Senha Forte (Min. 8 caracteres, 1 maiuscula, 1 minuscula, 1 numero)
 const REGEX_SENHA = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
