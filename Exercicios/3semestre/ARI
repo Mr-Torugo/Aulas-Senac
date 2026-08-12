@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .nova-tarefa {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .nova-tarefa input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .nova-tarefa button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nova-tarefa button:hover {
+            background: #45a049;
+        }
+
+        #contador {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        #lista-tarefa {
+            list-style: none;
+        }
+
+        #lista-tarefa li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        #lista-tarefa button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #lista-tarefa button:hover {
+            background: #c0392b;
+        }
+
+        #estado-vazio {
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+
+        <div class="nova-tarefa">
+            <input
+                type="text"
+                id="input-tarefa"
+                placeholder="Digite uma nova tarefa">
+            <button id="btn-adicionar">Adicionar</button>
+        </div>
+
+        <p id="contador">0 tarefas cadastradas</p>
+
+        <ul id="lista-tarefa"></ul>
+
+        <p id="estado-vazio">Nenhuma tarefa cadastrada</p>
+    </div>
+
+    <script>
+        let tarefas = [];
+
+        const inputTarefa = document.getElementById("input-tarefa");
+        const btnAdicionar = document.getElementById("btn-adicionar");
+        const contador = document.getElementById("contador");
+        const estadoVazio = document.getElementById("estado-vazio");
+        const listaTarefa = document.getElementById("lista-tarefa");
+
+        function adicionarTarefa() {
+            const texto = inputTarefa.value.trim();
+
+            if (texto === "") {
+                return;
+            }
+
+            tarefas.push(texto);
+
+            renderizarTarefas();
+
+            inputTarefa.value = "";
+            inputTarefa.focus();
+        }
+
+        function removerTarefa(indice) {
+            tarefas.splice(indice, 1);
+            renderizarTarefas();
+        }
+
+        function renderizarTarefas() {
+            listaTarefa.innerHTML = "";
+
+            tarefas.forEach((tarefa, indice) => {
+                const item = document.createElement("li");
+
+                item.innerHTML = `
+                    <span>${tarefa}</span>
+                    <button onclick="removerTarefa(${indice})">
+                        Remover
+                    </button>
+                `;
+
+                listaTarefa.appendChild(item);
+            });
+
+            contador.textContent =
+                `${tarefas.length} tarefa(s) cadastrada(s)`;
+
+            estadoVazio.style.display =
+                tarefas.length === 0 ? "block" : "none";
+        }
+
+        btnAdicionar.addEventListener("click", adicionarTarefa);
+
+        inputTarefa.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                adicionarTarefa();
+            }
+        });
+
+        renderizarTarefas();
+    </script>
+
+</body>
+</html>
