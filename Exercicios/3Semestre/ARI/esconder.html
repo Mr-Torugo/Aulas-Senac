@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar e Esconder Mensagem</title>
+</head>
+<body>
+
+    <button id="btn">Mostrar/Esconder</button>
+
+    <p id="mensagem" style="display: none;">
+        Esta mensagem pode ser escondida.
+    </p>
+
+    <script>
+        const botao = document.getElementById("btn");
+        const mensagem = document.getElementById("mensagem");
+
+        botao.addEventListener("click", () => {
+            if (mensagem.style.display === "none") {
+                mensagem.style.display = "block";
+                botao.textContent = "Esconder Mensagem";
+            } else {
+                mensagem.style.display = "none";
+                botao.textContent = "Mostrar Mensagem";
+            }
+        });
+    </script>
+
+</body>
+</html>

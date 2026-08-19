@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Catálogo de Produtos</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+
+    
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Catálogo de Produtos</h1>
+
+      <section class="filtros">
+        <input
+          type="text"
+          id="campo-pesquisa"
+          placeholder="Pesquisar produto..."
+          
+        />
+
+        <select id="filtro-categoria">
+          <option value="todos">Todas as categorias</option>
+
+          <option value="Eletrônicos">Eletrônicos</option>
+
+          <option value="Roupas">Roupas</option>
+
+          <option value="Acessórios">Acessórios</option>
+        </select>
+      </section>
+
+      <p id="contador-produtos">0 produtos encontrados</p>
+
+      <section class="conteudo">
+        <div id="area-produtos" class="area-produtos"></div>
+
+        <aside id="detalhes-produto" class="detalhes-produto">
+          <h2>Detalhes do produto</h2>
+
+          <p>Selecione um produto para visualizar os detalhes.</p>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

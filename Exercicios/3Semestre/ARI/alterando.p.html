@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o DOM - alterando paragrafo</title>
+</head>
+<body>
+
+    <h1 id="titulo">Texto 1 </h1>
+    <p id="paragrafo">Este é o texto inicial do parágrafo.</p>
+
+    <button onclick="alterarConteudo()">
+        Alterar texto 
+    </button>
+
+    <script>
+        function alterarConteudo() {
+            const titulo = document.getElementById("titulo");
+            const paragrafo = document.getElementById("paragrafo");
+            titulo.textContent = "Texto 2!";
+            paragrafo.textContent = "O conteúdo atualizado !.";
+        }
+    </script>
+
+</body>
+</html>
