@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Navegação Acessível</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+ 
+        header, nav, main, footer {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+ 
+        header { background-color: #d8b4e2; }
+        
+        main { background-color: #c8e6c9; }
+ 
+        section {
+            background-color: #ffe0b2;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+ 
+        footer { background-color: #d8b4e2; text-align: center; }
+
+        .controles-menu {
+            margin: 10px;
+        }
+ 
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+ 
+        button:hover { background-color: #218838; }
+ 
+        nav {
+            background-color: #b4c6e2;
+            transition: all 0.3s ease;
+        }
+ 
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+ 
+        li {
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+ 
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <h1>Site com Navegação Interativa</h1>
+    </header>
+ 
+    <div class="controles-menu">
+        <button id="btn-menu">Fechar menu</button>
+    </div>
+
+    <nav aria-label="Navegação principal" id="menu-principal">
+        <ul>
+            <li>Início</li>
+            <li>Sobre</li>
+            <li>Serviços</li>
+            <li>Contato</li>
+        </ul>
+    </nav>
+ 
+    <main>
+        <section>
+            <h2>Seção 1</h2>
+            <p>Conteúdo da primeira seção da página principal.</p>
+        </section>
+        
+        <section>
+            <h2>Seção 2</h2>
+            <p>Conteúdo da segunda seção da página principal.</p>
+        </section>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2026 - Navegação Acessível</p>
+    </footer>
+
+    <script>
+        const botaoMenu = document.querySelector('#btn-menu');
+        const menu = document.querySelector('#menu-principal');
+ 
+        botaoMenu.addEventListener('click', function() {
+            
+            menu.classList.toggle('oculto');
+            
+            if (menu.classList.contains('oculto')) {
+                botaoMenu.textContent = 'Abrir menu';
+            } else {
+                botaoMenu.textContent = 'Fechar menu';
+            }
+            
+        });
+    </script>
+</body>
+</html>
