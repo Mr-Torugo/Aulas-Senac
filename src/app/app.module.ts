@@ -9,6 +9,11 @@ import { ContentComponent } from './componentes/content/content.component';
 import { LogoComponent } from './componentes/header/logo/logo.component';
 import { BuscaComponent } from './componentes/header/busca/busca.component';
 import { NavlinksComponent } from './componentes/header/navlinks/navlinks.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { NavlinksComponent } from './componentes/header/navlinks/navlinks.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

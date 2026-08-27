@@ -1,5 +1,11 @@
-.busca-box{
-    background-color: lightblue;
-    height: 60px;
-    width: 400px;
+.busca-box {
+    width: 500px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+::ng-deep .mdc-text-field--outlined {
+    border-radius: 30px !important;
 }

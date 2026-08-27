@@ -2,7 +2,26 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    border: 2px solid black;
     height: 60px;
     padding: 0 1rem;
+}
+
+.navlinks-box a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.navlinks-box a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.navlinks-box a:hover {
+    background-color: white;
+    color: #1976d2;
+    border-radius: 8px;
 }

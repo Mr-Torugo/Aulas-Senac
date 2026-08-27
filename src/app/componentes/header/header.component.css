@@ -6,3 +6,15 @@
     height: 60px;
     padding: 0 1rem;
 }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+    height: 80px;
+
+    background: #1976d2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
