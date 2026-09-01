@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Semântica e Interatividade</title>
+    
+    <style>
+
+        button:hover { background-color: #003d82; }
+ 
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <h1>Portal de Notícias</h1>
+    </header>
+ 
+    <nav>
+        <p>Menu de Navegação (Home | Sobre | Contato)</p>
+    </nav>
+ 
+    <main>
+        <button id="btn-toggle">Mostrar/ocultar notícias</button>
+ 
+        <div class="conteudo-principal">
+            
+            <section id="secao-noticias">
+                <h2>Últimas Atualizações</h2>
+ 
+                <article>
+                    <h3>Notícia 1</h3>
+                    <p>Resumo do conteúdo da primeira notícia...</p>
+                </article>
+ 
+                <article>
+                    <h3>Notícia 2</h3>
+                    <p>Resumo do conteúdo da segunda notícia...</p>
+                </article>
+ 
+                <article>
+                    <h3>Notícia 3</h3>
+                    <p>Resumo do conteúdo da terceira notícia...</p>
+                </article>
+            </section>
+ 
+            <aside>
+                <h2>Publicidade</h2>
+                <p>Conteúdo lateral, links externos ou anúncios.</p>
+            </aside>
+ 
+        </div>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2026 - Exercício de HTML5 Semântico</p>
+    </footer>
+ 
+    <script>
+        const botao = document.querySelector('#btn-toggle');
+        const secaoNoticias = document.querySelector('#secao-noticias');
+ 
+        botao.addEventListener('click', function() {
+            secaoNoticias.classList.toggle('oculto');
+        });
+    </script>
+</body>
+</html>
