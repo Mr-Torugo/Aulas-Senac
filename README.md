@@ -1,7 +1,7 @@
 # 📚 Repositório Segundo Semestre
 
 ## 📌 Objetivo
-Este repositório foi criado para armazenar e organizar todos os arquivos, projetos e materiais do **segundo semestre**.  
+Este repositório foi criado para armazenar e organizar todos os arquivos, projetos e materiais de **Todos os semestre**.  
 A ideia é manter tudo centralizado, facilitando o acesso e acompanhamento das atividades acadêmicas.
 
 ## 📂 Estrutura
