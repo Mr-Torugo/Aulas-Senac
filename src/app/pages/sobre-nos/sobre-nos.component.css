@@ -1,0 +1,17 @@
+.sobre {
+    padding: 80px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .sobre h1 {
+    color: #0f172a;
+    margin-bottom: 30px;
+  }
+  
+  .sobre p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 20px;
+  }

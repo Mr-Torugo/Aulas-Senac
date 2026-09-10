@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .servicos {
+    min-height: 100vh;
+    padding: 80px 8%;
+    background: linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #e2e8f0 100%
+    );
+  }
+  
+  /* TÍTULO */
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .titulo h1 {
+    font-size: 3rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+  }
+  
+  .titulo p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* CARDS */
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    border-top: 5px solid #2563eb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(37, 99, 235, 0.20);
+  }
+  
+  .icone {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .card h2 {
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+  
+  .card p {
+    color: #475569;
+    line-height: 1.8;
+  }
+  
+  /* DIFERENCIAIS */
+  
+  .diferenciais {
+    margin-top: 100px;
+  }
+  
+  .diferenciais h2 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+  }
+  
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #0f172a;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    transition: 0.3s;
+  }
+  
+  .item:hover {
+    background: #2563eb;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* CALL TO ACTION */
+  
+  .cta {
+    margin-top: 100px;
+    background: #0f172a;
+    color: white;
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .cta button:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+  }
+  
+  /* RESPONSIVO */
+  
+  @media (max-width: 768px) {
+    .servicos {
+      padding: 50px 20px;
+    }
+  
+    .titulo h1 {
+      font-size: 2.2rem;
+    }
+  
+    .titulo p {
+      font-size: 1rem;
+    }
+  
+    .diferenciais h2,
+    .cta h2 {
+      font-size: 1.8rem;
+    }
+  
+    .cta {
+      padding: 40px 20px;
+    }
+  }
