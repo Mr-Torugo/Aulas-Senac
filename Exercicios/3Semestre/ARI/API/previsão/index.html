@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Previsão do Tempo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f3f6fa;
+        }
+
+        h1 {
+            color: #1d4ed8;
+        }
+
+        .busca {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #erro {
+            margin-top: 20px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Previsão do Tempo</h1>
+
+    <div class="busca">
+        <input
+            type="text"
+            id="cidade"
+            placeholder="Digite o nome da cidade"
+        >
+
+        <button onclick="buscarClima()">
+            Buscar
+        </button>
+    </div>
+
+    <p id="erro"></p>
+
+    <div id="resultado">
+        <h2 id="nomeCidade"></h2>
+
+        <p>
+            🌡️ Temperatura:
+            <strong id="temperatura"></strong>
+        </p>
+
+        <p>
+            🤔 Sensação térmica:
+            <strong id="sensacao"></strong>
+        </p>
+
+        <p>
+            ☁️ Condição:
+            <strong id="condicao"></strong>
+        </p>
+    </div>
+
+    <script>
+
+// Elementos do HTML
+const inputCidade = document.getElementById("cidade");
+const erro = document.getElementById("erro");
+const resultado = document.getElementById("resultado");
+
+
+// Função principal
+async function buscarClima() {
+
+    const cidade = inputCidade.value.trim();
+
+    // Limpa mensagens anteriores
+    erro.textContent = "";
+    resultado.style.display = "none";
+
+
+    // Verifica se o campo está vazio
+    if (cidade === "") {
+        erro.textContent = "Digite o nome de uma cidade.";
+        return;
+    }
+
+
+    try {
+
+        // ==========================================
+        // 1ª REQUISIÇÃO - Buscar latitude e longitude
+        // ==========================================
+
+        const urlCidade =
+            `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cidade)}&count=1&language=pt&format=json`;
+
+        const respostaCidade = await fetch(urlCidade);
+
+
+        // Verifica erro na requisição
+        if (!respostaCidade.ok) {
+            throw new Error("Erro ao buscar a cidade.");
+        }
+
+
+        const dadosCidade = await respostaCidade.json();
+
+
+        // Verifica se a cidade foi encontrada
+        if (!dadosCidade.results || dadosCidade.results.length === 0) {
+
+            erro.textContent = "Cidade não encontrada.";
+
+            return;
+        }
+
+
+        // Primeiro resultado encontrado
+        const local = dadosCidade.results[0];
+
+
+        const latitude = local.latitude;
+        const longitude = local.longitude;
+
+
+        console.log("Cidade:", local.name);
+        console.log("Latitude:", latitude);
+        console.log("Longitude:", longitude);
+
+
+
+        // ==========================================
+        // 2ª REQUISIÇÃO - Buscar o clima
+        // ==========================================
+
+        const urlClima =
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,weather_code&timezone=auto`;
+
+
+        const respostaClima = await fetch(urlClima);
+
+
+        // Verifica erro na requisição
+        if (!respostaClima.ok) {
+
+            throw new Error("Erro ao buscar o clima.");
+
+        }
+
+
+        const dadosClima = await respostaClima.json();
+
+
+        // Dados atuais do clima
+        const climaAtual = dadosClima.current;
+
+
+        // ==========================================
+        // Exibir os resultados
+        // ==========================================
+
+        let nomeCompleto = local.name;
+
+
+        // Adiciona o estado/região caso exista
+        if (local.admin1) {
+
+            nomeCompleto += ` - ${local.admin1}`;
+
+        }
+
+
+        // Nome da cidade
+        document.getElementById("nomeCidade").textContent =
+            nomeCompleto;
+
+
+        // Temperatura
+        document.getElementById("temperatura").textContent =
+            `${climaAtual.temperature_2m} °C`;
+
+
+        // Sensação térmica
+        document.getElementById("sensacao").textContent =
+            `${climaAtual.apparent_temperature} °C`;
+
+
+        // Condição climática
+        document.getElementById("condicao").textContent =
+            descricaoClima(climaAtual.weather_code);
+
+
+        // Mostra o resultado
+        resultado.style.display = "block";
+
+    }
+
+    catch (error) {
+
+        console.error("Erro:", error);
+
+        erro.textContent =
+            "Não foi possível consultar o clima. Tente novamente.";
+
+    }
+
+}
+
+
+// ==========================================
+// Converter código do clima em descrição
+// ==========================================
+
+function descricaoClima(codigo) {
+
+    const climas = {
+
+        0: "Céu limpo",
+
+        1: "Predominantemente limpo",
+        2: "Parcialmente nublado",
+        3: "Nublado",
+
+        45: "Nevoeiro",
+        48: "Nevoeiro com geada",
+
+        51: "Garoa leve",
+        53: "Garoa moderada",
+        55: "Garoa intensa",
+
+        56: "Garoa congelante leve",
+        57: "Garoa congelante intensa",
+
+        61: "Chuva leve",
+        63: "Chuva moderada",
+        65: "Chuva forte",
+
+        66: "Chuva congelante leve",
+        67: "Chuva congelante forte",
+
+        71: "Neve leve",
+        73: "Neve moderada",
+        75: "Neve forte",
+
+        77: "Grãos de neve",
+
+        80: "Pancadas de chuva leves",
+        81: "Pancadas de chuva moderadas",
+        82: "Pancadas de chuva fortes",
+
+        85: "Pancadas de neve leves",
+        86: "Pancadas de neve fortes",
+
+        95: "Trovoada",
+
+        96: "Trovoada com granizo leve",
+        99: "Trovoada com granizo forte"
+
+    };
+
+
+    return climas[codigo] || "Condição desconhecida";
+
+}
+
+
+// ==========================================
+// Pesquisar pressionando ENTER
+// ==========================================
+
+inputCidade.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        buscarClima();
+
+    }
+
+});
+
+</script>
