@@ -23,3 +23,4 @@ trabalhadorA.fazerEntrega();
 let qtdEntregas = trabalhadorA.verificaQtd();
 console.log(qtdEntregas); 
 
+/* exe entregador */ 
